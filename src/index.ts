@@ -10,6 +10,7 @@ const main = async () => {
       origin: process.env.ORIGIN,
     })
   );
+
   const apolloServer = new ApolloServer({
     schema: await buildGraphQLSchema(),
     context: ({ req, res }) => ({ req, res }),
@@ -19,8 +20,9 @@ const main = async () => {
   await apolloServer.start();
   apolloServer.applyMiddleware({ app });
 
-  app.listen(4000, () => {
-    console.log("server on");
+  const port = process.env.PORT || 8080;
+  app.listen(port, () => {
+    console.log(`server on, running on http://localhost:${port}`);
   });
 };
 

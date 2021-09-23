@@ -1,64 +1,82 @@
 import { getMaxSum } from "../service/maxSumService";
 
 test("Should get only the first element", async () => {
-  let list = [-1, -1, -1, -1, -1];
-  let sum = -1;
-  let positions = [1];
-  let { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
+  const list = [-1, -1, -1, -1, -1];
+  const sum = -1;
+  const positions = [1];
+  const { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
   expect(sum).toBe(sumResponse);
   expect(positions).toEqual(expect.arrayContaining(positionsResponse));
 });
 
 test("Should get only the second element", async () => {
-  let list = [-200, -1, -1, -1, -1000];
-  let sum = -1;
-  let positions = [2];
-  let { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
+  const list = [-200, -1, -1, -1, -1000];
+  const sum = -1;
+  const positions = [2];
+  const { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
   expect(sum).toBe(sumResponse);
   expect(positions).toEqual(expect.arrayContaining(positionsResponse));
 });
 
 test("Should get all elements but the first and last", async () => {
-  let list = [-321, 2, -1, 2, -123];
-  let sum = 3;
-  let positions = [2, 3, 4];
-  let { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
+  const list = [-321, 2, -1, 2, -123];
+  const sum = 3;
+  const positions = [2, 3, 4];
+  const { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
   expect(sum).toBe(sumResponse);
   expect(positions).toEqual(expect.arrayContaining(positionsResponse));
 });
 
 test("Should get all elements but the first", async () => {
-  let list = [-321, 1, 2, 3, 4];
-  let sum = 10;
-  let positions = [2, 3, 4, 5];
-  let { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
+  const list = [-321, 1, 2, 3, 4];
+  const sum = 10;
+  const positions = [2, 3, 4, 5];
+  const { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
   expect(sum).toBe(sumResponse);
   expect(positions).toEqual(expect.arrayContaining(positionsResponse));
 });
 
 test("Should get all elements", async () => {
-  let list = [1, 2, 3, 4, 5];
-  let sum = 15;
-  let positions = [1, 2, 3, 4, 5];
-  let { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
+  const list = [1, 2, 3, 4, 5];
+  const sum = 15;
+  const positions = [1, 2, 3, 4, 5];
+  const { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
   expect(sum).toBe(sumResponse);
   expect(positions).toEqual(expect.arrayContaining(positionsResponse));
 });
 
 test("Should get all elements but the last", async () => {
-  let list = [1, 2, 3, 4, -456];
-  let sum = 10;
-  let positions = [1, 2, 3, 4];
-  let { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
+  const list = [1, 2, 3, 4, -456];
+  const sum = 10;
+  const positions = [1, 2, 3, 4];
+  const { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
   expect(sum).toBe(sumResponse);
   expect(positions).toEqual(expect.arrayContaining(positionsResponse));
 });
 
 test("Should get only the third element", async () => {
-  let list = [-1, -1, 200, -1, -1];
-  let sum = 200;
-  let positions = [3];
-  let { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
+  const list = [-1, -1, 200, -1, -1];
+  const sum = 200;
+  const positions = [3];
+  const { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
+  expect(sum).toBe(sumResponse);
+  expect(positions).toEqual(expect.arrayContaining(positionsResponse));
+});
+
+test("Should get the only element", async () => {
+  const list = [-1];
+  const sum = -1;
+  const positions = [1];
+  const { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
+  expect(sum).toBe(sumResponse);
+  expect(positions).toEqual(expect.arrayContaining(positionsResponse));
+});
+
+test("Should get elements 4, -1, 2, 1", async () => {
+  const list = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+  const sum = 6;
+  const positions = [4, 5, 6, 7];
+  const { sum: sumResponse, positions: positionsResponse } = getMaxSum(list);
   expect(sum).toBe(sumResponse);
   expect(positions).toEqual(expect.arrayContaining(positionsResponse));
 });

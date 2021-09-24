@@ -22,7 +22,7 @@ const main = async () => {
 
   const port = process.env.PORT || 8080;
   app.listen(port, () => {
-    console.log(`server on, running on http://localhost:${port}`);
+    console.log(`server on, running at http://localhost:${port}/graphql`);
   });
 };
 

@@ -1,28 +1,30 @@
 import { MaxSumResponse } from "../entities/maxSumResponse";
 
 export function getMaxSum(list: number[]): MaxSumResponse {
-  //Kadane algorithm implementation
+  /* Kadane's algorithm implementation
+  Local maximum at index i is the maximum between the current element
+  and the sum the current element and the local maximum at index i - 1 */
   let positions = [1],
-    currentPositions: number[] = [];
+    localPositions: number[] = [];
   let sum = list[0],
-    currentMax = list[0];
+    localMax = list[0];
 
   //Iterate through list
   for (let i = 1; i < list.length; i++) {
-    let currentNumber = list[i];
-    currentMax += currentNumber;
+    let localNumber = list[i];
+    localMax += localNumber;
 
     //Test if the current number is higher than the sum so far
-    currentMax = Math.max(currentMax, currentNumber);
-    currentPositions = [...currentPositions, i + 1];
-    //Update sum if needed
-    if (currentMax > sum) {
-      sum = currentMax;
+    localMax = Math.max(localMax, localNumber);
+    localPositions = [...localPositions, i + 1];
+    //Update sum if local max exceeds it
+    if (localMax > sum) {
+      sum = localMax;
 
-      //Update positions array, if sum is equal to current number subarray sum is reset
+      //Update positions array, if sum is equal to local max subarray sum is reset
       positions =
-        sum == currentNumber ? [i + 1] : [...positions, ...currentPositions];
-      currentPositions = [];
+        sum == localNumber ? [i + 1] : [...positions, ...localPositions];
+      localPositions = [];
     }
   }
   return { sum, positions };

@@ -8,7 +8,7 @@ The largest sum contiguous subarray is problem solved using a dynamic programing
 
 ### Dependencies
 
-* To run locally you will need [node](https://nodejs.org/) installed globally on your machine. You use either `npm` or [yarn](https://yarnpkg.com/) as package managers.
+* To run locally you will need [node](https://nodejs.org/) installed globally on your machine. You can use either `npm` or [yarn](https://yarnpkg.com/) as package managers.
 * To run the project image you will need [Docker](https://www.docker.com/) installed
 
 ### Installing and executing

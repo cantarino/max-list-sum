@@ -1,4 +1,4 @@
-import { getMaxSum } from "../app/maxSum/data";
+import { getMaxSum } from "../../src/app/maxSum/data";
 
 describe("Max Sum", () => {
   test("Should get only the first element", async () => {

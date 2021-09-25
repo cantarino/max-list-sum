@@ -1,24 +1,7 @@
-import { ApolloServer } from "apollo-server-express";
-import cors from "cors";
-import express from "express";
-import { buildGraphQLSchema } from "./app/schema";
+import { buildApp } from "./app/app";
 
 const main = async () => {
-  const app = express();
-  app.use(
-    cors({
-      origin: process.env.ORIGIN,
-    })
-  );
-
-  const apolloServer = new ApolloServer({
-    schema: await buildGraphQLSchema(),
-    context: ({ req, res }) => ({ req, res }),
-    introspection: true,
-  });
-
-  await apolloServer.start();
-  apolloServer.applyMiddleware({ app });
+  const app = await buildApp();
 
   const port = process.env.PORT || 8080;
   app.listen(port, () => {

@@ -1,4 +1,4 @@
-import { MaxSumResponse } from "../entities/maxSumResponse";
+import { MaxSumResponse } from "./response";
 
 export function getMaxSum(list: number[]): MaxSumResponse {
   /* Kadane's algorithm implementation

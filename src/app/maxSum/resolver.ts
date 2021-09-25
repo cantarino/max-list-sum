@@ -1,6 +1,6 @@
 import { Arg, Mutation, Query, Resolver } from "type-graphql";
-import { MaxSumResponse } from "../entities/maxSumResponse";
-import { getMaxSum } from "../service/maxSumService";
+import { getMaxSum } from "./data";
+import { MaxSumResponse } from "./response";
 
 @Resolver()
 export class MaxSumResolver {

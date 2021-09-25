@@ -1,7 +1,7 @@
 import { ApolloServer } from "apollo-server-express";
 import cors from "cors";
 import express from "express";
-import { buildGraphQLSchema } from "./config/schema";
+import { buildGraphQLSchema } from "./app/schema";
 
 const main = async () => {
   const app = express();

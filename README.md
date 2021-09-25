@@ -3,7 +3,7 @@ An API implemented using Apollo Server. It solves the Largest sum contiguous sub
 
 ## Description
 
-The largest sum contiguous subarray is problem solved using a dynamic programing method where the task is to find a contiguous subarray with the largest sum, given a list of n elements. The API is desingned to solve such problem using Kadane's algorithm, the optimal solution for this problem in linear time.
+The largest sum contiguous subarray is a problem solved using a dynamic programming method where the task is to find a contiguous subarray with the largest sum, given a list of n elements. The API is designed to solve such problem using Kadane's algorithm, the optimal solution for this problem in linear time.
 ## Getting started
 
 ### Dependencies
@@ -25,7 +25,7 @@ The largest sum contiguous subarray is problem solved using a dynamic programing
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You may also run this project pulling the image from docker hub with `docker pull christiancantarino/maxsum`.After pulling the image, run it using the command: `docker run -p 8080:8080 christiancantarino/maxsum`
 
 ### Testing
-To run the implemented unit test, after installing the depencies with `npm install`, run `yarn test` on the main folder.
+To run the implemented unit test, after installing the dependencies with `npm install`, run `yarn test` on the main folder.
 
 ## GraphQL API
 To see the GraphQL queries and run them on your own with Apollo Server:
@@ -62,14 +62,12 @@ To see the GraphQL queries and run them on your own with Apollo Server:
 
 ```
 ├── src
-│   └──config  
+│   └──app  
+│   │   └──maxSum  
+│   │   │   └──data.ts  \\Service containing Kadane's Largest sum contiguous subarray solution
+│   │   │   └──resolver.ts  \\Apollo server resolver with maxSum mutation definition
+│   │   │   └──response.ts  \\GraphQL ObjectType for response definition
 │   │   └──schema.ts  \\GraphQL Schema Configurations
-│   └──entities
-│   │    └──maxSumResponse.ts  \\GraphQL ObjectType for response definition
-│   └──resolvers
-│   │    └──maxSumResolver.ts  \\Apollo server resolver
-│   └──service
-│   │    └──maxSumService.ts  \\Service containe Kadane's Largest sum contiguous subarray solution
 │   └──test
 │   │    └──maxSum.test.ts  \\Kadane's algorithm unit test
 │   └──index.ts    \\Main server file

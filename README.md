@@ -68,7 +68,7 @@ To see the GraphQL queries and run them on your own with Apollo Server:
 │   │   │   └──resolver.ts  \\Apollo server resolver with maxSum mutation definition
 │   │   │   └──response.ts  \\GraphQL ObjectType for response definition
 │   │   └──schema.ts  \\GraphQL Schema Configurations
-│   └──app.ts    \\Main server configuration file
+│   │   └──app.ts    \\Main server configuration file
 │   └──index.ts    \\Main server file
 └──test
 │   └──integration

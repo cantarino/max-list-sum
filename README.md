@@ -25,7 +25,7 @@ The largest sum contiguous subarray is a problem solved using a dynamic programm
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You may also run this project pulling the image from docker hub with `docker pull christiancantarino/maxsum`.After pulling the image, run it using the command: `docker run -p 8080:8080 christiancantarino/maxsum`
 
 ### Testing
-To run the implemented unit test, after installing the dependencies with `npm install`, run `yarn test` on the main folder.
+To run the implemented tests, after installing the dependencies with `npm install`, run `npm test` on the main folder.
 
 ## GraphQL API
 To see the GraphQL queries and run them on your own with Apollo Server:
@@ -68,12 +68,16 @@ To see the GraphQL queries and run them on your own with Apollo Server:
 │   │   │   └──resolver.ts  \\Apollo server resolver with maxSum mutation definition
 │   │   │   └──response.ts  \\GraphQL ObjectType for response definition
 │   │   └──schema.ts  \\GraphQL Schema Configurations
-│   └──test
-│   │    └──maxSum.test.ts  \\Kadane's algorithm unit test
+│   └──app.ts    \\Main server configuration file
 │   └──index.ts    \\Main server file
+└──test
+│   └──integration
+│   │    └──maxSumResolver.test.ts  \\Aplication's resolver integration test
+│   └──unit
+│   │    └──maxSum.test.ts  \\Kadane's algorithm unit test
 ├── docker-compose.yaml    \\Docker-compose configurations
 ├── Dockerfile    \\Dockerfile configurations
-├── jest.config.js  \\Jest configurations file
+├── jest.config.ts  \\Jest configurations file
 ├── package.json    \\Project configurations    
 ├── tsconfig.json   \\Typescript specific configurations        
 ```

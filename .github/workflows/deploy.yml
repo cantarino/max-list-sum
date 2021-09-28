@@ -11,15 +11,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - uses: actions/setup-node@main
-        with:
-          node-version: 12
-      - run: npm ci
-      - run: npm run build
-      - uses: mr-smithers-excellent/docker-build-push@v4
-        with:
-          image: christiancantarino/maxsum
-          registry: docker.io
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Git checkout
+        uses: actions/checkout@main
+      - name: Push Image
+        uses: mr-smithers-excellent/docker-build-push@v4
+          with:
+            image: christiancantarino/maxsum
+            registry: docker.io
+            tag: latest, v1
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}

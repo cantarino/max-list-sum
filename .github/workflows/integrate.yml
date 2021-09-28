@@ -12,11 +12,16 @@ jobs:
   test_pull_request:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - uses: actions/setup-node@main
-        with:
-          node-version: 12
-      - run: npm ci
-      - run: npm test
-      - run: npm run build
+      - name: Git checkout
+        uses: actions/checkout@main
+      - name: Setup enviroment
+        uses: actions/setup-node@main
+          with:
+            node-version: 12
+      - name: Instal node
+        run: npm ci
+      - name: Test
+        run: npm test
+      - name: Build
+        run: npm run build
     

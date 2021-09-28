@@ -13,11 +13,11 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@main
-      - name: Push Image
+      - name: Build and push image
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
           image: christiancantarino/maxsum
           registry: docker.io
-          tags: latest, v1
+          tag: [ latest, v1 ]
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}

@@ -3,7 +3,7 @@ name: Node Continuous Deployment
 on:
   workflow_run:
     workflows: ["Node Continuous Integration"]
-    branches: [ master ]
+    branches: [ main ]
     types:
       - completed
 
@@ -11,13 +11,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
         with:
           node-version: 12
       - run: npm ci
       - run: npm run build
-      - uses: mr-smithers-excellent/docker-build-push@v4
+      - uses: mr-smithers-excellent/docker-build-push@main
         with:
           image: christiancantarino/maxsum
           registry: docker.io

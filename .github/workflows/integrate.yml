@@ -16,8 +16,8 @@ jobs:
         uses: actions/checkout@main
       - name: Setup enviroment
         uses: actions/setup-node@main
-          with:
-            node-version: 12
+        with:
+          node-version: 12
       - name: Instal node
         run: npm ci
       - name: Test

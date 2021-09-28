@@ -15,9 +15,9 @@ jobs:
         uses: actions/checkout@main
       - name: Push Image
         uses: mr-smithers-excellent/docker-build-push@v4
-          with:
-            image: christiancantarino/maxsum
-            registry: docker.io
-            tag: latest, v1
-            username: ${{ secrets.DOCKER_USERNAME }}
-            password: ${{ secrets.DOCKER_PASSWORD }}
+        with:
+          image: christiancantarino/maxsum
+          registry: docker.io
+          tag: latest, v1
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}

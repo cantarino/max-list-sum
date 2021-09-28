@@ -17,7 +17,7 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm run build
-      - uses: mr-smithers-excellent/docker-build-push@main
+      - uses: mr-smithers-excellent/docker-build-push@v4
         with:
           image: christiancantarino/maxsum
           registry: docker.io
